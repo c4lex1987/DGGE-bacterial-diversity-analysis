@@ -1,0 +1,410 @@
+% MATLAB LANGUAGE PROGRAM.
+% AIM: 
+%          - TO CROP SOIL IMAGES INTO THEIR CORRESPONDING LANES.
+%		   - TO SAVE THE LANES AS SEPARATE IMAGES IN THEIR OWN DIRECTORIES
+%		   (CREATED BEFORE)
+%			 
+% =========================================================================
+
+
+
+% ALEX LABORATORY COMPUTER
+cd('F:\TESIS\MATLAB PROGRAMACION ESPECTROS')
+
+fprintf('ESTOY EN PRIMER DIRECTORIO');
+
+
+
+d=dir(pwd);
+length(d);
+
+
+for i=3:length(d);
+    fprintf('ESTOY EN PRIMER BUCLE FOR');
+    
+    if(d(i).isdir);
+        
+        cd(d(i).name);
+        nombreDirectorio=d(i).name
+        fprintf('ESTOY EN EL DIRECTORIO: %s\n',nombreDirectorio);
+        
+       
+        
+        % SENTENCES TO GET THE LIST OF FILES OF THE CURRENT DIRECTORY.
+        listaArchivos=dir;
+        longitudlistaArchivos=length(listaArchivos);
+        
+        for j=3:longitudlistaArchivos;
+            listaArchivos(j);
+            
+            % SENTENCES TO SHOW THE FILE NAMES ASSOCIATED TO THE IMAGES
+            nombreArchivo1=listaArchivos(j).name;
+            
+            % SETENCES TO MANIPULATE THE NAMES OF THE INITIAL FILES AND TO GENERATE
+            % THE NAMES OF THE FINAL FILES
+            [restoToken, resto] = strtok(nombreArchivo1,'.');
+            
+            
+            nombreArchivoSalida1=strcat('Carril1_',restoToken);
+            nombreArchivoSalida1=strcat(nombreArchivoSalida1,'.jpg');
+            
+            nombreArchivoSalida2=strcat('Carril2_',restoToken);
+            nombreArchivoSalida2=strcat(nombreArchivoSalida2,'.jpg');
+            
+            nombreArchivoSalida3=strcat('Carril3_',restoToken);
+            nombreArchivoSalida3=strcat(nombreArchivoSalida3,'.jpg');
+            
+            nombreArchivoSalida4=strcat('Carril4_',restoToken);
+            nombreArchivoSalida4=strcat(nombreArchivoSalida4,'.jpg');
+            
+            nombreArchivoSalida5=strcat('Carril5_',restoToken);
+            nombreArchivoSalida5=strcat(nombreArchivoSalida5,'.jpg');
+            
+            nombreArchivoSalida6=strcat('Carril6_',restoToken);
+            nombreArchivoSalida6=strcat(nombreArchivoSalida6,'.jpg');
+            
+            nombreArchivoSalida7=strcat('Carril7_',restoToken);
+            nombreArchivoSalida7=strcat(nombreArchivoSalida7,'.jpg');
+            
+            nombreArchivoSalida8=strcat('Carril8_',restoToken);
+            nombreArchivoSalida8=strcat(nombreArchivoSalida8,'.jpg');
+            
+            nombreArchivoSalida9=strcat('Carril9_',restoToken);
+            nombreArchivoSalida9=strcat(nombreArchivoSalida9,'.jpg');
+            
+            nombreArchivoSalida10=strcat('Carril10_',restoToken);
+            nombreArchivoSalida10=strcat(nombreArchivoSalida10,'.jpg');
+            
+            nombreArchivoSalida11=strcat('Carril11_',restoToken);
+            nombreArchivoSalida11=strcat(nombreArchivoSalida11,'.jpg');
+            
+            nombreArchivoSalida12=strcat('Carril12_',restoToken);
+            nombreArchivoSalida12=strcat(nombreArchivoSalida12,'.jpg');
+            
+            nombreNuevoDirectorio=strcat('CARRILES_RECORTADOS__',restoToken);
+            nombreNuevoDirectorio=strcat(nombreNuevoDirectorio,'\');
+            
+            rutaNuevaDirectorio=strcat('F:\TESIS\MATLAB PROGRAMACION ESPECTROS\SUMA INTENSIDADES PRUEBA\',nombreNuevoDirectorio);
+            
+            
+            % NAMES OF THE DIRECTORIES THAT WILL STORE THE IMAGES OF THE LANES: A DIRECTORY BY LANE
+            
+            nombreDirectorio1='CARRIL 1';
+            nombreDirectorio2='CARRIL 2';
+            nombreDirectorio3='CARRIL 3';
+            nombreDirectorio4='CARRIL 4';
+            nombreDirectorio5='CARRIL 5';
+            nombreDirectorio6='CARRIL 6';
+            nombreDirectorio7='CARRIL 7';
+            nombreDirectorio8='CARRIL 8';
+            nombreDirectorio9='CARRIL 9';
+            nombreDirectorio10='CARRIL 10';
+            nombreDirectorio11='CARRIL 11';
+            nombreDirectorio12='CARRIL 12';
+            
+            rutaNuevaDirectorio1=strcat('F:\TESIS\MATLAB PROGRAMACION ESPECTROS\SUMA INTENSIDADES PRUEBA\',nombreNuevoDirectorio);
+            rutaNuevaDirectorio1=strcat(rutaNuevaDirectorio1,nombreDirectorio1);
+            
+            rutaNuevaDirectorio2=strcat('F:\TESIS\MATLAB PROGRAMACION ESPECTROS\SUMA INTENSIDADES PRUEBA\',nombreNuevoDirectorio);
+            rutaNuevaDirectorio2=strcat(rutaNuevaDirectorio2,nombreDirectorio2);
+            
+            rutaNuevaDirectorio3=strcat('F:\TESIS\MATLAB PROGRAMACION ESPECTROS\SUMA INTENSIDADES PRUEBA\',nombreNuevoDirectorio);
+            rutaNuevaDirectorio3=strcat(rutaNuevaDirectorio3,nombreDirectorio3);
+            
+            rutaNuevaDirectorio4=strcat('F:\TESIS\MATLAB PROGRAMACION ESPECTROS\SUMA INTENSIDADES PRUEBA\',nombreNuevoDirectorio);
+            rutaNuevaDirectorio4=strcat(rutaNuevaDirectorio4,nombreDirectorio4);
+            
+            rutaNuevaDirectorio5=strcat('F:\TESIS\MATLAB PROGRAMACION ESPECTROS\SUMA INTENSIDADES PRUEBA\',nombreNuevoDirectorio);
+            rutaNuevaDirectorio5=strcat(rutaNuevaDirectorio5,nombreDirectorio5);
+            
+            rutaNuevaDirectorio6=strcat('F:\TESIS\MATLAB PROGRAMACION ESPECTROS\SUMA INTENSIDADES PRUEBA\',nombreNuevoDirectorio);
+            rutaNuevaDirectorio6=strcat(rutaNuevaDirectorio6,nombreDirectorio6);
+            
+            rutaNuevaDirectorio7=strcat('F:\TESIS\MATLAB PROGRAMACION ESPECTROS\SUMA INTENSIDADES PRUEBA\',nombreNuevoDirectorio);
+            rutaNuevaDirectorio7=strcat(rutaNuevaDirectorio7,nombreDirectorio7);
+            
+            rutaNuevaDirectorio8=strcat('F:\TESIS\MATLAB PROGRAMACION ESPECTROS\SUMA INTENSIDADES PRUEBA\',nombreNuevoDirectorio);
+            rutaNuevaDirectorio8=strcat(rutaNuevaDirectorio8,nombreDirectorio8);
+            
+            rutaNuevaDirectorio9=strcat('F:\TESIS\MATLAB PROGRAMACION ESPECTROS\SUMA INTENSIDADES PRUEBA\',nombreNuevoDirectorio);
+            rutaNuevaDirectorio9=strcat(rutaNuevaDirectorio9,nombreDirectorio9);
+            
+            rutaNuevaDirectorio10=strcat('F:\TESIS\MATLAB PROGRAMACION ESPECTROS\SUMA INTENSIDADES PRUEBA\',nombreNuevoDirectorio);
+            rutaNuevaDirectorio10=strcat(rutaNuevaDirectorio10,nombreDirectorio10);
+            
+            rutaNuevaDirectorio11=strcat('F:\TESIS\MATLAB PROGRAMACION ESPECTROS\SUMA INTENSIDADES PRUEBA\',nombreNuevoDirectorio);
+            rutaNuevaDirectorio11=strcat(rutaNuevaDirectorio11,nombreDirectorio11);
+            
+            rutaNuevaDirectorio12=strcat('F:\TESIS\MATLAB PROGRAMACION ESPECTROS\SUMA INTENSIDADES PRUEBA\',nombreNuevoDirectorio);
+            rutaNuevaDirectorio12=strcat(rutaNuevaDirectorio12,nombreDirectorio12);
+            
+            % WE GET THE MATRIX ASSOCIATED WITH THE IMAGE
+            imagenPrimera=imread(nombreArchivo1,'jpg');
+            imshow(imagenPrimera);
+            
+            info = imfinfo(nombreArchivo1,'jpg')
+            pause;
+            
+            % GRAPHICAL INPUT FROM MOUSE: WE IDENTIFY THE LANE BY
+            % POSITIONING THE CURSOR WITH THE MOUSE IN THE SELECCTED
+            % POINTS
+            [x,y]=ginput(12)
+            [xfin, yfin]=ginput(12);
+            
+            numeroPuntosMedios=length(x);
+            
+            for m=1:numeroPuntosMedios;
+                posicionIzquierda(m)=x(m)-15;
+                altura(m)=yfin(m)-y(m);
+            end;
+            
+            
+            % SENTENCES TO CROP THE INITIAL IMAGE INTO LANES AND TO SAVE THESE LANES AS SEPARATE IMAGES
+            
+            fprintf('MOSTRAMOS LA IMAGEN RECORTADA\n')
+            imagenCortada1=imcrop(imagenPrimera,[posicionIzquierda(1) y(1) 20 altura(1)]);
+
+            imshow(imagenCortada1);
+            
+            
+            
+            [SUCCESS] = mkdir ('F:\TESIS\MATLAB PROGRAMACION ESPECTROS\SUMA INTENSIDADES PRUEBA',nombreNuevoDirectorio);
+            
+            if(SUCCESS==1);
+                cd(rutaNuevaDirectorio);
+                
+               
+                [SUCCESS1] = mkdir(nombreDirectorio1)
+                
+                if (SUCCESS1==1);
+                    
+                    cd(rutaNuevaDirectorio1);
+                    
+                    imwrite(imagenCortada1,nombreArchivoSalida1);
+                    cd ..;
+                end;
+                cd ..;
+                close;
+            
+            end;
+            
+            imagenCortada2=imcrop(imagenPrimera,[posicionIzquierda(2) y(2) 20 altura(2)]);
+            
+            imshow(imagenCortada2);
+            
+            if(SUCCESS==1);
+                cd(rutaNuevaDirectorio);
+               
+                [SUCCESS2] = mkdir(nombreDirectorio2)
+                if (SUCCESS2==1);
+                    cd(rutaNuevaDirectorio2);
+                    
+                    imwrite(imagenCortada2,nombreArchivoSalida2);
+                    cd ..;
+                end;
+                cd ..;
+                close;
+            
+            end;
+            
+            imagenCortada3=imcrop(imagenPrimera,[posicionIzquierda(3) y(3) 20 altura(3)]);
+            
+            imshow(imagenCortada3);
+            
+            if(SUCCESS==1);
+                cd(rutaNuevaDirectorio);
+               
+                [SUCCESS3] = mkdir(nombreDirectorio3)
+                if (SUCCESS3==1);
+                    cd(rutaNuevaDirectorio3);
+                    
+                    imwrite(imagenCortada3,nombreArchivoSalida3);
+                    cd ..;
+                end;
+                cd ..;
+                close;
+            end;
+            
+            imagenCortada4=imcrop(imagenPrimera,[posicionIzquierda(4) y(4) 20 altura(4)]);
+            
+            
+            imshow(imagenCortada4);
+            
+            if(SUCCESS==1);
+                cd(rutaNuevaDirectorio);
+                
+                [SUCCESS4] = mkdir(nombreDirectorio4)
+                if (SUCCESS4==1);
+                    cd(rutaNuevaDirectorio4);
+                    
+                    imwrite(imagenCortada4,nombreArchivoSalida4);
+                    cd ..;
+                end;
+                cd ..;
+                close;
+            
+            end;
+            
+            imagenCortada5=imcrop(imagenPrimera,[posicionIzquierda(5) y(5) 20 altura(5)]);
+            
+            imshow(imagenCortada5);
+            
+            if(SUCCESS==1);
+                cd(rutaNuevaDirectorio);
+                
+                [SUCCESS5] = mkdir(nombreDirectorio5)
+                if (SUCCESS5==1);
+                    cd(rutaNuevaDirectorio5);
+                    
+                    imwrite(imagenCortada5,nombreArchivoSalida5);
+                    cd ..;
+                end;
+                cd ..;
+                close;
+            end;
+            
+            imagenCortada6=imcrop(imagenPrimera,[posicionIzquierda(6) y(6) 20 altura(6)]);
+           
+            
+            imshow(imagenCortada6);
+            
+            if(SUCCESS==1);
+                cd(rutaNuevaDirectorio);
+                
+                [SUCCESS6] = mkdir(nombreDirectorio6)
+                if (SUCCESS6==1);
+                    cd(rutaNuevaDirectorio6);
+                    
+                    imwrite(imagenCortada6,nombreArchivoSalida6);
+                    cd ..;
+                end;
+                cd ..;
+                close;
+            end;
+            
+            imagenCortada7=imcrop(imagenPrimera,[posicionIzquierda(7) y(7) 20 altura(7)]);
+            
+            
+            imshow(imagenCortada7);
+            
+            if(SUCCESS==1);
+                cd(rutaNuevaDirectorio);
+                
+                [SUCCESS7] = mkdir(nombreDirectorio7)
+                if (SUCCESS7==1);
+                    cd(rutaNuevaDirectorio7);
+                    
+                    imwrite(imagenCortada7,nombreArchivoSalida7);
+                    cd ..;
+                end;
+                cd ..;
+                close;
+            end;
+            
+            imagenCortada8=imcrop(imagenPrimera,[posicionIzquierda(8) y(8) 20 altura(8)]);
+            
+            imshow(imagenCortada8);
+            
+            if(SUCCESS==1);
+                cd(rutaNuevaDirectorio);
+                
+                [SUCCESS8] = mkdir(nombreDirectorio8)
+                if (SUCCESS8==1);
+                    cd(rutaNuevaDirectorio8);
+                    
+                    imwrite(imagenCortada8,nombreArchivoSalida8);
+                    cd ..;
+                end;
+                cd ..;
+                close;
+            end;
+            
+            imagenCortada9=imcrop(imagenPrimera,[posicionIzquierda(9) y(9) 20 altura(9)]);
+            
+            
+            imshow(imagenCortada9);
+            
+            if(SUCCESS==1);
+                cd(rutaNuevaDirectorio);
+                
+                [SUCCESS9] = mkdir(nombreDirectorio9)
+                if (SUCCESS9==1);
+                    cd(rutaNuevaDirectorio9);
+                    
+                    imwrite(imagenCortada9,nombreArchivoSalida9);
+                    cd ..;
+                end;
+                cd ..;
+                close;
+            end;
+            
+            imagenCortada10=imcrop(imagenPrimera,[posicionIzquierda(10) y(10) 20 altura(10)]);
+            
+            
+            imshow(imagenCortada10);
+            
+            if(SUCCESS==1);
+                cd(rutaNuevaDirectorio);
+                
+                [SUCCESS10] = mkdir(nombreDirectorio10)
+                if (SUCCESS10==1);
+                    cd(rutaNuevaDirectorio10);
+                    
+                    imwrite(imagenCortada10,nombreArchivoSalida10);
+                    cd ..;
+                end;
+                cd ..;
+                close;
+            end;
+            
+            imagenCortada11=imcrop(imagenPrimera,[posicionIzquierda(11) y(11) 20 altura(11)]);
+            
+            
+            imshow(imagenCortada11);
+            
+            if(SUCCESS==1);
+                cd(rutaNuevaDirectorio);
+                
+                [SUCCESS11] = mkdir(nombreDirectorio11)
+                if (SUCCESS11==1);
+                    cd(rutaNuevaDirectorio11);
+                    
+                    imwrite(imagenCortada11,nombreArchivoSalida11);
+                    cd ..;
+                end;
+                cd ..;
+                close;
+            end;
+            
+            imagenCortada12=imcrop(imagenPrimera,[posicionIzquierda(12) y(12) 20 altura(12)]);
+            
+            
+            imshow(imagenCortada12);
+            
+            if(SUCCESS==1);
+                cd(rutaNuevaDirectorio);
+                
+                [SUCCESS12] = mkdir(nombreDirectorio12)
+                if (SUCCESS12==1);
+                    cd(rutaNuevaDirectorio12);
+                   
+                    imwrite(imagenCortada12,nombreArchivoSalida12);
+                    cd ..;
+                end;
+                cd ..;
+                close;
+            end;
+            cd ..
+        
+        end;
+        
+        
+        
+        % ALEX LABORATORY COMPUTER
+        cd('F:\TESIS\MATLAB PROGRAMACION ESPECTROS')
+        
+       
+    
+    end;
+end;
+fprintf('FIN EJECUCIÓN PROGRAMA\n');
